@@ -3,6 +3,7 @@
         <div class="header-nav">
             <router-link to="/">Home</router-link>
             <router-link to="/about">About</router-link>
+            <router-link to="/cart">Cart</router-link>
         </div>
     </header>
 </template>
@@ -20,7 +21,7 @@ export default {
     }
     .header-nav{
         display: grid;
-        grid-template-columns: repeat(2, 100px);
+        grid-template-columns: repeat(3, 100px);
         grid-column-gap: 15px;
         justify-content: center;
     }

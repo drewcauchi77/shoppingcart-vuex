@@ -11,7 +11,7 @@ const getters = {
 const actions = {
     async fetchProducts({ commit }) {
         const response = await axios.get('https://fakestoreapi.com/products')
-        console.log(response.data)
+        // console.log(response.data)
 
         commit('setProducts', response.data)
     }
