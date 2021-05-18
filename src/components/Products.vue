@@ -8,7 +8,9 @@
                     <img class="product-image" :src="product.image" :alt="product.title">
                     <h2 class="product-name">{{ product.title }}</h2>
                     <span class="product-price">&euro;{{ product.price }}</span>
-                    <i class="fas fa-shopping-cart"></i>
+                    <div class="add-to-cart" @click="addProductToCart(product.id)">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,10 +27,13 @@ export default {
     },
     methods: {
         ...mapActions([
-            'fetchProducts'
-        ])
+            'fetchProducts',
+            'addProductToCart',
+        ]),
     },
-    computed: mapGetters(['allProducts'])
+    computed: mapGetters([
+        'allProducts',
+    ])
 }
 </script>
 
@@ -70,10 +75,10 @@ export default {
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         display: block;
     }
-    .fa-shopping-cart{
+    .add-to-cart{
         position: absolute;
-        bottom: 8px;
-        right: 8px;
+        bottom: 5px;
+        right: 5px;
         margin: auto;
         cursor: pointer;
     }
