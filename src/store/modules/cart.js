@@ -1,12 +1,20 @@
 import axios from 'axios'
 
 const state = {
-    items: [],
-    total: 0.00
+    items: []
 }
 
 const getters = {
-    allCartItems: (state) => state.items
+    allCartItems: (state) => state.items,
+    cartTotalPrice: (state, getters) => {
+        var total = 0
+
+        for(var i = 0; i < getters.allCartItems.length; i++){
+            total += getters.allCartItems[i].line_price
+        }
+
+        return total.toFixed(2)
+    }
 }
 
 const actions = {

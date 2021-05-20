@@ -7,7 +7,7 @@
                 <div class="product-content">
                     <img class="product-image" :src="product.image" :alt="product.title">
                     <h2 class="product-name">{{ product.title }}</h2>
-                    <span class="product-price">&euro;{{ product.price }}</span>
+                    <span class="product-price">&euro;{{ product.price.toFixed(2) }}</span>
                     <div class="add-to-cart" @click="addProductToCart(product.id)">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
