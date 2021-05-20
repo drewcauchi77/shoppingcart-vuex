@@ -7,14 +7,14 @@
                 <tr>
                     <th>Image</th>
                     <th>Product Name</th>
-                    <th>Qty</th>
-                    <th>Price</th>
+                    <th>Qty (CPI)</th>
+                    <th>Line Price</th>
                 </tr>
                 <tr v-for="item in allCartItems" :key="item.id">
                     <td><img :src="item.image" :alt="item.title"></td>
                     <td><span>{{ item.title }}</span></td>
-                    <td><span>{{ item.quantity }}</span></td>
-                    <td><span>&euro;{{ item.price }}</span></td>
+                    <td><span><strong>{{ item.quantity }}</strong><br/>(&euro;{{ item.price }} each)</span></td>
+                    <td><span>&euro;{{ item.line_price }}</span></td>
                 </tr>
             </table>
         </div>
